@@ -1,0 +1,39 @@
+.header {
+  display: flex;
+  align-items: center;
+
+  &__container {
+    padding: 20px 45px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 36px;
+    color: #000;
+  }
+}
+
+.search {
+  &__input {
+    padding-left: 60px;
+    position: relative;
+    width: 603px;
+    height: 60px;
+    border: 1px solid #000;
+    border-radius: 50px;
+    background-image: url("../img/search.svg");
+    background-position: 30px center;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+  }
+
+  &__input::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+  }
+}

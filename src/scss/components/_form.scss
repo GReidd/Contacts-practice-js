@@ -1,0 +1,87 @@
+.form {
+  &__label {
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  &__submit {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background: #45a049;
+    }
+  }
+}
+
+.custom-checkbox {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+
+  &__field {
+    display: none; // Скрываем стандартный чекбокс
+
+    &:checked + .custom-checkbox__content::before {
+      background-color: #ccc; // Цвет для выбранного состояния
+      border-color: #ccc;
+    }
+  }
+
+  &__content {
+    position: relative;
+    padding-left: 30px; // Отступ для чекбокса
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #333;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      background-color: #fff;
+      transition: all 0.3s ease;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 6px;
+      transform: translateY(-50%) scale(0);
+      width: 8px;
+      height: 14px;
+      border: solid #fff;
+      border-width: 0 2px 2px 0;
+      transform-origin: bottom left;
+      transition: transform 0.2s ease;
+      transform: rotate(45deg) scale(0);
+    }
+  }
+
+  &__field:checked + .custom-checkbox__content::after {
+    transform: rotate(45deg) scale(1);
+  }
+}
